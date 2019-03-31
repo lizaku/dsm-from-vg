@@ -9,6 +9,7 @@ Distributional semantics models are known to produce excellent representations o
 
 The repo contains the following files:
 * `parse.py` - this script parses the entities, relations and attributes from the [Visual Genome dataset](http://visualgenome.org/api/v0/api_home.html) and produces an XML file further used for building the space.
-* `build_vg_space.py` - this script works with the file created by `parse.py` and builds the space by counting co-occurreces for the entities, optionally taking into account relations, attributes and situations. 
+* `count_vg_statistics.py` - this script builds frequency lists from the VG data used when filtering the entities for the space by frequency.
+* `build_vg_space.py` - this script works with the files created by `parse.py` and `count_vg_statistics.py` and builds the space by counting co-occurrences for the entities, optionally taking into account relations, attributes and situations (try `python3  build_vg_space.py -h`).
 * `evaluate.py` - this script evaluates the created spaces against MEN and SimLex-999 datasets and outputs the spearman correlations between human-based similarity scores and similarity scores extracted from the models.
 * `utils.py` - this script contains auxiliary functions and is not run directly.
